@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <script>
+            var socket = new WebSocket("ws://localhost:8080/websockets/word");
+            socket.onopen = function() {
+                alert("CONECTADO");
+            };
+            socket.onmessage = function(event) {
+                alert(event.data);
+            };            
+        </script>
+    </body>
+</html>
